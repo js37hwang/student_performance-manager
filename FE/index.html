@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>학생 정보/ 성적 관리 페이지</title>
+        
+    <!-- CSS 파일들 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section class="sectionWrap">
+      <article class="searchWrap">
+        <div>
+          <button  onclick="createHiddenInput()">CSV 파일 업로드</button>
+        </div> 
+        <form  onsubmit="event.preventDefault(); getStudentsList()">
+          <ul  class="searchSecWrap">
+            <li>
+              <select required id="grade" name="grade" placeholder="학년">
+                <option value="" disabled selected hidden>
+                  학년
+                </option>
+                <option value="0">전체</option>
+              </select>
+            </li>
+            <li>
+              <select required name="semester" id="semester" placeholder="학기">
+                <option value="" disabled selected hidden>
+                  학기
+                </option>
+                <option value="0">전체</option>
+              </select>
+            </li>
+            <li>
+              <select required name="examType" id="examType" placeholder="중간/기말">
+                <option value="" disabled selected hidden>
+                  중간/기말
+                </option>
+                <option value="0">전체</option>
+              </select>
+            </li>
+            <li>
+              <select required name="classNumber" id="classNumber" placeholder="반">
+                <option value="" disabled selected hidden>
+                  반
+                </option>
+                <option value="0">전체</option>
+              </select>
+            </li>
+            <li>
+              <select required name="schoolGrade" id="schoolGrade" placeholder="내신 등급">
+                <option value="" disabled selected hidden>
+                  내신 등급
+                </option>
+                <option value="0">전체</option>
+              </select>
+            </li>
+            <li>
+              <button type="submit">검색</button>
+            </li>
+          </ul>
+        </form>
+      </article>
+      <article>
+        <ul class="editArea">
+          <li>
+            <input id="student_code"  type="text" required  placeholder="학번">
+          </li>
+          <li>
+            <input id="student_name" type="text" required placeholder="이름">
+          </li>
+          <li>
+            <input id="semester_name" type="text" required placeholder="학기 구분">
+          </li>
+          <li>
+            <input id="exam_name" type="text" required placeholder="중간/기말">
+          </li>
+          <li>
+            <input  id="KOR_01" type="text" required placeholder="국어">
+          </li>
+          <li>
+            <input  id="MATH_01" type="text" required placeholder="수학">
+          </li>
+          <li>
+            <input  id="ENG_02" type="text" required placeholder="영어">
+          </li>
+          <li>
+            <button>수정</button>
+          </li>
+          <li>
+            <button>삭제</button>
+          </li>
+        </ul>
+      </article>
+      <article>
+        <div class="table-wrapper">
+          <table>
+            <colgroup>
+              <col style="width: 3%;">  
+              <col style="width: 7%;">  
+              <col style="width: 9%;">  
+              <col style="width: 5%;">  
+              <col style="width: 5%;">  
+              <col style="width: 9%;">  
+              <col style="width: 7%;">  
+              <col style="width: 7%;">  
+              <col style="width: 7%;">  
+              <col style="width: 7%;">  
+              <col style="width: 7%;">  
+              <col style="width: 7%;">  
+              <col style="width: 11%;"> 
+              <col style="width: 11%;">
+            </colgroup>
+            <thead>
+              <tr id="theadSec">
+                <th></th>
+                <th>학번</th>
+                <th>이름</th>
+                <th>학기 구분</th>
+                <th>중간/기말</th>
+                <th>내신 평균 등급</th>
+                <th>국어</th>
+                <th>국어 내신</th>
+                <th>수학</th>
+                <th>수학 내신</th>
+                <th>영어</th>
+                <th>영어 내신</th>
+                <th>등록일</th>
+                <th>수정일</th>
+              </tr>
+            </thead>
+            <tbody id="tbodySec">
+              <tr class="table-info-row">
+                <td colspan="14" style="text-align: center; padding: 4rem 0; color: #666; height: 100%;">
+                  <div style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: bold;">🔍 조회 조건을 선택해 주세요</div>
+                  <p style="font-size: 1rem; color: #999; margin: 0;">학년, 학기 등 조건을 선택한 후 검색 버튼을 누르면 학생 성적 목록이 표시됩니다.</p>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="studentScoreData"></td>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>a@test.com</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="studentScoreData"></td>
+                <td>2</td>
+                <td>홍길동</td>
+                <td>a@test.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+    <!-- JS 파일 -->
+    <script src="./script/getDropdown.js" ></script>
+    <script src="./script/uploadCsv.js" ></script>
+    <script src="./script/getStudents.js" ></script>
+  </body>
+</html>

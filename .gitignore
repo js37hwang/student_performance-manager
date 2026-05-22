@@ -1,0 +1,87 @@
+# ==========================================
+# OS
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+
+# ==========================================
+# IDE
+# ==========================================
+.idea/
+.vscode/
+
+# Eclipse / STS
+.metadata/
+.project
+.classpath
+.settings/
+.springBeans
+.factorypath
+.apt_generated/
+
+# ==========================================
+# Logs
+# ==========================================
+*.log
+
+# ==========================================
+# Docs (PPT, Excel 등 산출물 제외)
+# ==========================================
+# docs/
+# *.pptx
+# *.xlsx
+# *.docx
+# *.pdf
+
+# ==========================================
+# Frontend (React/Vue/Node)
+# ==========================================
+FE/node_modules/
+FE/build/
+FE/dist/
+FE/.next/
+FE/out/
+FE/.nuxt/
+
+# env
+FE/.env
+FE/.env.local
+FE/.env.development.local
+FE/.env.production.local
+
+# ==========================================
+# Backend Spring (Maven)
+# ==========================================
+BE/std-mng/target/
+BE/std-mng/bin/
+BE/std-mng/build/
+BE/std-mng/out/
+
+# Maven
+BE/std-mng/pom.xml.tag
+BE/std-mng/pom.xml.releaseBackup
+BE/std-mng/pom.xml.versionsBackup
+BE/std-mng/pom.xml.next
+BE/std-mng/release.properties
+BE/std-mng/dependency-reduced-pom.xml
+
+# Spring secret
+BE/std-mng/src/main/resources/application-local.yml
+BE/std-mng/src/main/resources/application-prod.yml
+BE/std-mng/src/main/resources/application-secret.yml
+BE/std-mng/.env
+
+# Tomcat / Apache (스크린샷에 노출된 apache 폴더 통째로 제외)
+BE/Servers/
+BE/work/
+BE/temp/
+BE/apache/
+
+
+# ==========================================
+# Docker Volume
+# ==========================================
+docker/data/
+opensearch_data/

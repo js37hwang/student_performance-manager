@@ -6,6 +6,8 @@ Thumbs.db
 desktop.ini
 .env
 
+.dataset
+
 # ==========================================
 # IDE
 # ==========================================
@@ -54,30 +56,55 @@ FE/.env.production.local
 # ==========================================
 # Backend Spring (Maven)
 # ==========================================
-BE/std-mng/target/
-BE/std-mng/bin/
-BE/std-mng/build/
-BE/std-mng/out/
+BE/std_mng/target/
+BE/std_mng/bin/
+BE/std_mng/build/
+BE/std_mng/out/
 
 # Maven
-BE/std-mng/pom.xml.tag
-BE/std-mng/pom.xml.releaseBackup
-BE/std-mng/pom.xml.versionsBackup
-BE/std-mng/pom.xml.next
-BE/std-mng/release.properties
-BE/std-mng/dependency-reduced-pom.xml
+BE/std_mng/pom.xml.tag
+BE/std_mng/pom.xml.releaseBackup
+BE/std_mng/pom.xml.versionsBackup
+BE/std_mng/pom.xml.next
+BE/std_mng/release.properties
+BE/std_mng/dependency-reduced-pom.xml
 
 # Spring secret
-BE/std-mng/src/main/resources/application-local.yml
-BE/std-mng/src/main/resources/application-prod.yml
-BE/std-mng/src/main/resources/application-secret.yml
-BE/std-mng/.env
+BE/std_mng/src/main/resources/application-local.yml
+BE/std_mng/src/main/resources/application-prod.yml
+BE/std_mng/src/main/resources/application-secret.yml
+BE/std_mng/.env
 
 # Tomcat / Apache (스크린샷에 노출된 apache 폴더 통째로 제외)
-BE/Servers/
+BE/std_mng/
 BE/work/
 BE/temp/
 BE/apache/
+
+BE2/stdmng/target/
+BE2/stdmng/bin/
+BE2/stdmng/build/
+BE2/stdmng/out/
+
+# Maven
+BE2/stdmng/pom.xml.tag
+BE2/stdmng/pom.xml.releaseBackup
+BE2/stdmng/pom.xml.versionsBackup
+BE2/stdmng/pom.xml.next
+BE2/stdmng/release.properties
+BE2/stdmng/dependency-reduced-pom.xml
+
+# Spring secret
+BE2/stdmng/src/main/resources/application-local.yml
+BE2/stdmng/src/main/resources/application-prod.yml
+BE2/stdmng/src/main/resources/application-secret.yml
+BE2/stdmng/.env
+
+# Tomcat / Apache (스크린샷에 노출된 apache 폴더 통째로 제외)
+BE2/Servers/
+BE2/work/
+BE2/temp/
+BE2/apache/
 
 
 # ==========================================

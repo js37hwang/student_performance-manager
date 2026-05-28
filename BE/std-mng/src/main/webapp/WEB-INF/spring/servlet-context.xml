@@ -12,9 +12,11 @@
 
 	<mvc:cors>
 		<mvc:mapping path="/**"
-			allowed-origins="http://43.200.183.5:80, http://43.200.183.5"
-			allowed-methods="GET, POST, PUT, DELETE, OPTIONS" allowed-headers="*"
-			allow-credentials="true" max-age="3600" />
+			allowed-origins="*"
+			allowed-methods="GET, POST, PUT, DELETE, OPTIONS" 
+			allowed-headers="*"
+			allow-credentials="false" 
+			max-age="3600" />
 	</mvc:cors>
 
 	<context:property-placeholder

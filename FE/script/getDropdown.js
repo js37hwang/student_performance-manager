@@ -3,15 +3,11 @@ const API = {
   grade: "/api/upload/grade",
 };
 
-getDropdown();
-
 // ── 드롭다운 데이터 가져오기 ──────────────────
 async function getDropdown() {
   try {
     const res = await fetch("http://127.0.0.1:8181/api/getDropdown", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({}),
     });
 
     // response -> res로 수정

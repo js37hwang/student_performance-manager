@@ -20,6 +20,9 @@
                   학년
                 </option>
                 <option value="0">전체</option>
+                <option value="1">1학년</option>
+                <option value="2">2학년</option>
+                <option value="3">3학년</option>
               </select>
             </li>
             <li>
@@ -28,6 +31,8 @@
                   학기
                 </option>
                 <option value="0">전체</option>
+                <option value="1">1학기</option>
+                <option value="2">2학기</option>
               </select>
             </li>
             <li>
@@ -36,6 +41,8 @@
                   중간/기말
                 </option>
                 <option value="0">전체</option>
+                <option value="MID">중간</option>
+                <option value="FIN">기말</option>
               </select>
             </li>
             <li>
@@ -44,10 +51,15 @@
                   반
                 </option>
                 <option value="0">전체</option>
+                <option value="1">1반</option>
+                <option value="2">2반</option>
+                <option value="3">3반</option>
+                <option value="4">4반</option>
+                <option value="5">5반</option>
               </select>
             </li>
-            <li>
-              <select required name="schoolGrade" id="schoolGrade" placeholder="내신 등급">
+            <li style="display:none">
+              <select  name="schoolGrade" id="schoolGrade" placeholder="내신 등급">
                 <option value="" disabled selected hidden>
                   내신 등급
                 </option>
@@ -63,67 +75,67 @@
       <article>
         <ul class="editArea">
           <li>
-            <input id="student_code"  type="text" required  placeholder="학번">
+            <input disabled id="studentId" type="text"  placeholder="학번">
           </li>
           <li>
-            <input id="student_name" type="text" required placeholder="이름">
+            <input disabled id="studentName" type="text"  placeholder="이름">
           </li>
           <li>
-            <input id="semester_name" type="text" required placeholder="학기 구분">
+            <input disabled id="semester_i" type="text"  placeholder="학기 구분">
           </li>
           <li>
-            <input id="exam_name" type="text" required placeholder="중간/기말">
+            <input disabled id="examType_i" type="text"  placeholder="중간/기말">
           </li>
           <li>
-            <input  id="KOR_01" type="text" required placeholder="국어">
+            <input  id="koreanScore" type="text" required placeholder="국어">
           </li>
           <li>
-            <input  id="MATH_01" type="text" required placeholder="수학">
+            <input  id="mathScore" type="text" required placeholder="수학">
           </li>
           <li>
-            <input  id="ENG_02" type="text" required placeholder="영어">
+            <input  id="englishScore" type="text" required placeholder="영어">
           </li>
           <li>
-            <button>수정</button>
+            <button onclick="editStdScore()">수정</button>
           </li>
           <li>
-            <button>삭제</button>
+            <button onclick="delStd()">삭제</button>
           </li>
         </ul>
       </article>
       <article>
         <div class="table-wrapper">
           <table>
-            <colgroup>
-              <col style="width: 3%;">  
-              <col style="width: 7%;">  
-              <col style="width: 9%;">  
-              <col style="width: 5%;">  
-              <col style="width: 5%;">  
-              <col style="width: 9%;">  
-              <col style="width: 7%;">  
-              <col style="width: 7%;">  
-              <col style="width: 7%;">  
-              <col style="width: 7%;">  
-              <col style="width: 7%;">  
-              <col style="width: 7%;">  
-              <col style="width: 11%;"> 
-              <col style="width: 11%;">
+            <colgroup> 
+              <col style="width: 5%;">   
+              <col style="width: 5%;">   
+              <col style="width: 8%;">   
+              <col style="width: 7%;">   
+              <col style="width: 6%;">   
+              <col style="width: 6%;">   
+              <col style="width: 6%;">   
+              <col style="width: 6%;">   
+              <col style="width: 5%;">   
+              <col style="width: 5%;">   
+              <col style="width: 5%;">   
+              <col style="width: 6%;">   
+              <col style="width: 10%;">  
+              <col style="width: 10%;">
             </colgroup>
             <thead>
               <tr id="theadSec">
-                <th></th>
+                <th>학년</th>
+                <th>반</th>
                 <th>학번</th>
                 <th>이름</th>
-                <th>학기 구분</th>
-                <th>중간/기말</th>
-                <th>내신 평균 등급</th>
+                <th>학기</th>
+                <th>시험 종류</th>
+                <th>전교등수</th>
+                <th>반등수</th>
                 <th>국어</th>
-                <th>국어 내신</th>
                 <th>수학</th>
-                <th>수학 내신</th>
                 <th>영어</th>
-                <th>영어 내신</th>
+                <th>평균</th>
                 <th>등록일</th>
                 <th>수정일</th>
               </tr>
@@ -135,18 +147,6 @@
                   <p style="font-size: 1rem; color: #999; margin: 0;">학년, 학기 등 조건을 선택한 후 검색 버튼을 누르면 학생 성적 목록이 표시됩니다.</p>
                 </td>
               </tr>
-              <tr>
-                <td><input type="radio" name="studentScoreData"></td>
-                <td>1</td>
-                <td>홍길동</td>
-                <td>a@test.com</td>
-              </tr>
-              <tr>
-                <td><input type="radio" name="studentScoreData"></td>
-                <td>2</td>
-                <td>홍길동</td>
-                <td>a@test.com</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -156,5 +156,6 @@
     <script src="./script/getDropdown.js" ></script>
     <script src="./script/uploadCsv.js" ></script>
     <script src="./script/getStudents.js" ></script>
+    <script src="./script/editStudent.js" ></script>
   </body>
 </html>

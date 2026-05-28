@@ -81,31 +81,7 @@ BE/work/
 BE/temp/
 BE/apache/
 
-BE2/stdmng/target/
-BE2/stdmng/bin/
-BE2/stdmng/build/
-BE2/stdmng/out/
-
-# Maven
-BE2/stdmng/pom.xml.tag
-BE2/stdmng/pom.xml.releaseBackup
-BE2/stdmng/pom.xml.versionsBackup
-BE2/stdmng/pom.xml.next
-BE2/stdmng/release.properties
-BE2/stdmng/dependency-reduced-pom.xml
-
-# Spring secret
-BE2/stdmng/src/main/resources/application-local.yml
-BE2/stdmng/src/main/resources/application-prod.yml
-BE2/stdmng/src/main/resources/application-secret.yml
-BE2/stdmng/.env
-
-# Tomcat / Apache (스크린샷에 노출된 apache 폴더 통째로 제외)
-BE2/Servers/
-BE2/work/
-BE2/temp/
-BE2/apache/
-
+BE/std-mng/target/
 
 # ==========================================
 # Docker Volume

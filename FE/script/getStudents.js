@@ -32,7 +32,7 @@ async function getStudentsList() {
     const schoolGrade = document.getElementById("schoolGrade").value;
     const tbody = document.getElementById("tbodySec");
 
-    let res = await fetch("http://127.0.0.1:8181/api/getStdList", {
+    let res = await fetch(`${BASE_URL}/api/getStdList`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -1,9 +1,4 @@
-// const API = {
-//   attendance: "/api/upload/attendance",
-//   grade: "/api/upload/grade",
-// };
-
-// 페이지 로드 시 드롭다운 자동으로 불러오기 (필요시 주석 해제)
+// 페이지 로드 시 드롭다운 자동으로 불러오기
 // document.addEventListener("DOMContentLoaded", getDropdown);
 
 // ── 히든 인풋 생성 및 파일 선택 창 열기 ──────
@@ -17,10 +12,10 @@ function createHiddenInput() {
   input.addEventListener("change", () => {
     const file = input.files[0];
     if (file) handleFile(file);
-    input.remove(); // 파일 선택 후 element 삭제
+    input.remove();
   });
 
-  input.click(); // ⭐ 클릭 이벤트를 트리거해줘야 파일 탐색기가 열립니다.
+  input.click();
   return input;
 }
 
@@ -75,15 +70,13 @@ async function validateCSV(file) {
 // ── 서버 전송 ─────────────────────────────────
 async function uploadToServer(file) {
   try {
-    // 1. 서버로 보낼 주머니(FormData)를 만들고, 여기에 파일과 타입을 다 집어넣습니다.
     const bodyData = new FormData();
     bodyData.append("file", file);
     bodyData.append("fileName", file.name);
 
-    // 2. 고정된 API 주소로 딱 전송합니다. (헤더 세팅도 필요 없습니다)
-    const response = await fetch("http://127.0.0.1:8181/api/fileUpload", {
+    const response = await fetch(`${BASE_URL}/api/fileUpload`, {
       method: "POST",
-      body: bodyData, // 파일+타입이 담긴 주머니를 그대로 전송
+      body: bodyData,
     });
 
     if (!response.ok) {

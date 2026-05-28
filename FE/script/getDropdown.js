@@ -1,12 +1,7 @@
-const API = {
-  attendance: "/api/upload/attendance",
-  grade: "/api/upload/grade",
-};
-
 // ── 드롭다운 데이터 가져오기 ──────────────────
 async function getDropdown() {
   try {
-    const res = await fetch("http://127.0.0.1:8181/api/getDropdown", {
+    const res = await fetch(`${BASE_URL}/api/getDropdown`, {
       method: "POST",
     });
 

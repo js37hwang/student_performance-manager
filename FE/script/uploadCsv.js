@@ -81,7 +81,7 @@ async function uploadToServer(file) {
     bodyData.append("fileName", file.name);
 
     // 2. 고정된 API 주소로 딱 전송합니다. (헤더 세팅도 필요 없습니다)
-    const response = await fetch("/api/uploadCsv", {
+    const response = await fetch("http://127.0.0.1:8181/api/fileUpload", {
       method: "POST",
       body: bodyData, // 파일+타입이 담긴 주머니를 그대로 전송
     });
@@ -90,7 +90,7 @@ async function uploadToServer(file) {
       throw new Error("서버 응답 실패");
     }
 
-    const data = await response.json();
+    const data = await response.text();
     return data;
   } catch (error) {
     console.error("업로드 중 에러 발생:", error);

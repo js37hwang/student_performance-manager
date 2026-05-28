@@ -3,38 +3,57 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
-
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 	<mvc:annotation-driven />
 
 	<mvc:cors>
-		<mvc:mapping path="/**" 
-			allowed-origins="*"
-			allowed-methods="GET, POST, PUT, DELETE, OPTIONS" 
-			allowed-headers="*"
-			allow-credentials="false" 
-			max-age="3600" />
+		<mvc:mapping path="/**"
+			allowed-origins="http://127.0.0.1:3000, http://localhost:3000, http://127.0.0.1:5500, http://localhost:5500"
+			allowed-methods="GET, POST, PUT, DELETE, OPTIONS" allowed-headers="*"
+			allow-credentials="true" max-age="3600" />
 	</mvc:cors>
 
-	<context:property-placeholder location="classpath:application.properties" />
+	<context:property-placeholder
+		location="classpath:application.properties" />
 
-	<context:component-scan base-package="com.kopo.std_mng" />
+	<context:component-scan
+		base-package="com.kopo.std_mng_new" />
 
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${spring.datasource.driver-class-name}" />
-		<property name="url" value="jdbc:mysql://localhost:3306/std_mng?serverTimezone=Asia/Seoul&amp;allowMultiQueries=true" />
-		<property name="username" value="${spring.datasource.username}" />
-		<property name="password" value="${spring.datasource.password}" />
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="${spring.datasource.driver-class-name}" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/std_mng?serverTimezone=Asia/Seoul&amp;allowMultiQueries=true&amp;characterEncoding=UTF-8" />
+		<property name="username"
+			value="${spring.datasource.username}" />
+		<property name="password"
+			value="${spring.datasource.password}" />
 	</bean>
 
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	<jdbc:initialize-database
+		data-source="dataSource">
+		<jdbc:script location="classpath:schema.sql"
+			encoding="UTF-8" />
+		<jdbc:script location="classpath:data.sql"
+			encoding="UTF-8" />
+	</jdbc:initialize-database>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver"></bean>
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 

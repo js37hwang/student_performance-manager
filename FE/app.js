@@ -4,8 +4,6 @@ const http = require("http");
 const app = express();
 const server = http.createServer(app).listen(80); // 기본 port: http -> 80/ https -> 443
 
-const BASE_URL = "http://43.200.183.5:8080";
-
 // HTML파일 출력을 위해
 const path = require("path");
 

@@ -20,11 +20,12 @@ public class FileTitleInfoDTO {
 	public FileTitleInfoDTO() {
 	}
 
-	public FileTitleInfoDTO(Integer gradeLevel, Integer classNo, String examType, Integer schoolYear) {
+	public FileTitleInfoDTO(Integer gradeLevel, Integer classNo, String examType, Integer schoolYear, Integer semester) {
 		this.gradeLevel = gradeLevel;
 		this.classNo = classNo;
 		this.examType = examType;
 		this.schoolYear = schoolYear;
+		this.semester = semester;
 	}
 
 	public Integer getGradeLevel() {

@@ -29,7 +29,7 @@ async function getStudentsList() {
     const semester = Number(document.getElementById("semester").value);
     const examType = document.getElementById("examType").value;
     const classNo = Number(document.getElementById("classNumber").value);
-    const schoolGrade = Number(document.getElementById("schoolGrade").value);
+    const grade = Number(document.getElementById("schoolGrade").value);
     const tbody = document.getElementById("tbodySec");
 
     let res = await fetch(`${BASE_URL}/api/getStdList`, {

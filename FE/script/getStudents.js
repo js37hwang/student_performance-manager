@@ -36,7 +36,7 @@ async function getStudentsList() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        grade, // 학년
+        gradeLevel : grade, // 학년
         semester, // 학기
         examType, // 시험 종류
         classNo, // 반

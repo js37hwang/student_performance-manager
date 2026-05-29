@@ -56,7 +56,7 @@ async function editStdScore() {
       return;
     }
 
-    let res = await fetch("http://127.0.0.1:8181/api/editStd", {
+    let res = await fetch(`${BASE_URL}/api/editStd`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -103,7 +103,7 @@ async function delStd() {
       return;
     }
 
-    let res = await fetch("http://127.0.0.1:8181/api/delStd", {
+    let res = await fetch(`${BASE_URL}/api/delStd`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

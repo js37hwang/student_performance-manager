@@ -72,7 +72,8 @@ public class StudentEditService {
                     rs.getInt("grade_level"),
                     rs.getInt("class_no"),
                     rs.getString("exam_type"),
-                    rs.getInt("school_year")
+                    rs.getInt("school_year"),
+                    rs.getInt("semester")
                 );
             }, stdInfo.getIdx(), stdInfo.getStudentId());
             

@@ -38,7 +38,8 @@ public class StudentDelService {
 			    (Integer) deletedRow.get("grade_level"),
 			    (Integer) deletedRow.get("class_no"),
 			    (String)  deletedRow.get("exam_type"),
-			    (Integer) deletedRow.get("school_year")
+			    (Integer) deletedRow.get("school_year"),
+			    (Integer) deletedRow.get("semester")
 			);
 
 			res.put("result", "success");

@@ -16,10 +16,11 @@ services:
     networks:
       - app-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mysql", "-u", "manager_std", "-p123qwe", "-e", "SELECT 1;"]
       interval: 5s
       timeout: 5s
       retries: 10
+      start_period: 30s
 
   backend:
     build: ./BE/std-mng

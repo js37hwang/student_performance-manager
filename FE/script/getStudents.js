@@ -28,7 +28,7 @@ async function getStudentsList() {
     const grade = Number(document.getElementById("grade").value);
     const semester = Number(document.getElementById("semester").value);
     const examType = document.getElementById("examType").value;
-    const classNumber = Number(document.getElementById("classNumber").value);
+    const classNo = Number(document.getElementById("classNumber").value);
     const schoolGrade = Number(document.getElementById("schoolGrade").value);
     const tbody = document.getElementById("tbodySec");
 
@@ -39,7 +39,7 @@ async function getStudentsList() {
         grade, // 학년
         semester, // 학기
         examType, // 시험 종류
-        classNumber, // 반
+        classNo, // 반
         // schoolGrade,
       }),
     });

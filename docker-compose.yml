@@ -24,8 +24,6 @@ services:
   backend:
     build: ./BE/std-mng
     container_name: backend
-    environment:
-      SQL_INIT_MODE: always
     ports:
       - "8080:8080"
     networks:

@@ -31,8 +31,7 @@ CREATE TABLE IF NOT EXISTS subject_table (
 
 CREATE TABLE IF NOT EXISTS delete_student_table (
     log_idx INT AUTO_INCREMENT PRIMARY KEY,
-    student_score_idx INT NOT NULL, --원본 성적 테이블의 idx
-
+    student_score_idx INT NOT NULL,
     grade_level INT NOT NULL,
     class_no INT NOT NULL,
     student_id VARCHAR(10)  NOT NULL,

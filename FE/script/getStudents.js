@@ -25,11 +25,11 @@ function examBadge(type) {
 
 async function getStudentsList() {
   try {
-    const grade = document.getElementById("grade").value;
-    const semester = document.getElementById("semester").value;
+    const grade = Number(document.getElementById("grade").value);
+    const semester = Number(document.getElementById("semester").value);
     const examType = document.getElementById("examType").value;
-    const classNumber = document.getElementById("classNumber").value;
-    const schoolGrade = document.getElementById("schoolGrade").value;
+    const classNumber = Number(document.getElementById("classNumber").value);
+    const schoolGrade = Number(document.getElementById("schoolGrade").value);
     const tbody = document.getElementById("tbodySec");
 
     let res = await fetch(`${BASE_URL}/api/getStdList`, {

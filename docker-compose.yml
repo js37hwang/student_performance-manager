@@ -11,13 +11,15 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./BE/std-mng/src/main/resources/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+  - ./BE/std-mng/src/main/resources/data.sql:/docker-entrypoint-initdb.d/data.sql
     networks:
       - app-network
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
 
   backend:
     build: ./BE/std-mng
